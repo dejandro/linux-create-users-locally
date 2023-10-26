@@ -1,6 +1,12 @@
 #!/bin/bash
 accounts=$(cat usernames.txt)
 
+if [[ ! -f usernames.txt ]] ; then
+    echo 'The "username.txt" is missing, aborting.'
+    exit
+
+        else
+
 for i in $accounts;
    do
 #     echo $i   #print usernames while creating accounts
@@ -26,3 +32,5 @@ while true; do
 done
 echo ""
 for i in $accounts; do id $i; done
+
+fi
